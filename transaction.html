@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="result"></div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script>
+      $.getJSON(
+        'http://104.197.157.140:7876/nxt', 
+        {"requestType": "getAsset", "asset": "12071612744977229797", "includeCounts": "true"}, function(request) 
+      {
+        console.log(request)
+        // $("#result").html(request.attachment.message);
+      });
+  </script>
+</body>
+</html>
