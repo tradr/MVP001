@@ -41,7 +41,7 @@
     <div class="container">
       <div class="starter-template">
         <h1>NXTopia Marketplace listing: Tags: Domains</h1>
-        <p class="lead">Go on, buy something. Oh, and you need to be logged in to your NXT client for this to work.</p>
+        <p class="lead">Go on, buy something. Currently connected to Node: http://163.172.157.87 on Port 7877.</p>
       </div>
       <div id="result"></div>
     </div><!-- /.container -->
@@ -61,12 +61,11 @@
 
     <script>
         $.getJSON(
-          'http://localhost:7876/nxt', 
+          'http://163.172.157.87:7877/nxt', 
           {"requestType": "searchDGSGoods", "tag": "domains"}, function(request) 
         {
           var rows;
           if (request) {
-            console.log('something' + request.goods);
             $.each(request.goods, function(key, data) {
               rows += '<tr>';
               rows += '<td>'+data.name+'</td>';
