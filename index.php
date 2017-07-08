@@ -9,15 +9,18 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">TRADR</a>
+      <a class="navbar-brand" href="/">TRADR</a>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Buy stuff <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Buy stuff<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sell stuff</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="drugs.php">Drugs</a>
           </li>
           <!--<li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
@@ -41,7 +44,7 @@
     <div class="container">
       <div class="starter-template">
         <h1>NXTopia Marketplace listing: Tags: Domains</h1>
-        <p class="lead">Go on, buy something. Oh, and you need to be logged in to your NXT client for this to work.</p>
+        <p class="lead">Go on, buy something. Currently connected to Node: http://163.172.157.87 on Port 7877.</p>
       </div>
       <div id="result"></div>
     </div><!-- /.container -->
@@ -61,12 +64,11 @@
 
     <script>
         $.getJSON(
-          'http://localhost:7876/nxt', 
+          'http://163.172.157.87:7877/nxt', 
           {"requestType": "searchDGSGoods", "tag": "domains"}, function(request) 
         {
           var rows;
           if (request) {
-            console.log('something' + request.goods);
             $.each(request.goods, function(key, data) {
               rows += '<tr>';
               rows += '<td>'+data.name+'</td>';
