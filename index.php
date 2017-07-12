@@ -68,7 +68,7 @@
           var convertedNxtDate;
           if (request) {
             $.each(request.goods, function(key, data) {
-              convertedNxtDate = new Date((new Date("2013-12-24T00:00:00Z").getTime()/1000 + timestamp)*1000);
+              convertedNxtDate = Date((Date("2013-12-24T00:00:00Z").getTime()/1000 + timestamp)*1000);
               rows += '<tr>';
               rows += '<td>'+data.name+'</td>';
               rows += '<td>'+data.priceNQT+' NXT</td>';
