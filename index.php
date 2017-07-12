@@ -65,16 +65,14 @@
           {"requestType": "searchDGSGoods", "tag": "domains"}, function(request) 
         {
           var rows;
-          var convertedNxtDate;
           if (request) {
             $.each(request.goods, function(key, data) {
-              convertedNxtDate = Date((Date("2013-12-24T00:00:00Z").getTime()/1000 + timestamp)*1000);
               rows += '<tr>';
               rows += '<td>'+data.name+'</td>';
               rows += '<td>'+data.priceNQT+' NXT</td>';
               rows += '<td>'+data.quantity+'</td>';
               rows += '<td>'+data.sellerRS+'</td>';
-              rows += '<td>'+convertedNxtDate+'</td>';
+              rows += '<td>'+data.timestamp+'</td>';
               rows += '</tr>';
             });
           } else {
