@@ -65,14 +65,19 @@
           {"requestType": "searchDGSGoods", "tag": "domains"}, function(request) 
         {
           var rows;
+          var unixEpoch = moment("Thu, 01 Jan 1970 00:00:00 GMT");
+          var nxtEpoch = moment(unixEpoch).add('seconds', 1385294400); 
           if (request) {
             $.each(request.goods, function(key, data) {
+              var convertedNxtDateMoment = moment(nxtEpoch).add('seconds', data.timestamp);
+              var convertedNxtDate = moment(convertedNxtDateMoment).format("dddd, MMMM Do YYYY, h:mm:ss a");
+
               rows += '<tr>';
               rows += '<td>'+data.name+'</td>';
               rows += '<td>'+data.priceNQT+' NXT</td>';
               rows += '<td>'+data.quantity+'</td>';
               rows += '<td>'+data.sellerRS+'</td>';
-              rows += '<td>'+data.timestamp+'</td>';
+              rows += '<td>'+convertedNxtDate+'</td>';
               rows += '</tr>';
             });
           } else {
