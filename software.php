@@ -72,13 +72,12 @@
               rows += '<td>'+data.priceNQT+' NXT</td>';
               rows += '<td>'+data.quantity+'</td>';
               rows += '<td>'+data.sellerRS+'</td>';
-              rows += '<td>'+data.timestamp+'</td>';
               rows += '</tr>';
             });
           } else {
             rows = '<tr><td>If you see nothing here, that means you\'re either not logged in to your NXT client, or your blockchain hasn\'t been completely downloaded</td></tr>';
           }
-          var tableHead = '<div class="table-responsive"><table class="table table-striped"><thead><tr><th>Item</th><th>Price</th><th>Quantity</th><th>Seller ID</th><th>Listing Date</th></tr></thead><tbody>';
+          var tableHead = '<div class="table-responsive"><table class="table table-striped"><thead><tr><th>Item</th><th>Price</th><th>Quantity</th><th>Seller ID</th></tr></thead><tbody>';
           var tableEnd = '</tbody></table></div>';
           $("#result").html(tableHead + rows + tableEnd);
         });
