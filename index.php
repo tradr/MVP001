@@ -19,9 +19,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Sell stuff</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="drugs.php">Drugs</a>
-          </li>
           <!--<li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>-->
