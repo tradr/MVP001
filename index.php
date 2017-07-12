@@ -65,6 +65,7 @@
           {"requestType": "searchDGSGoods", "tag": "domains"}, function(request) 
         {
           var rows;
+          var convertedNxtDate;
           if (request) {
             $.each(request.goods, function(key, data) {
               convertedNxtDate = new Date((new Date("2013-12-24T00:00:00Z").getTime()/1000 + timestamp)*1000);
